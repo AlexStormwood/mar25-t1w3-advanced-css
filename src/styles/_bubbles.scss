@@ -1,28 +1,33 @@
-* {
-	padding: 0;
-	margin: 0;
+
+$bubble-background: red;
+
+:root {
+	--bubble-background: green;
 }
 
-body {
-	overflow: hidden;
-}
+
 
 .bubbles {
 	width: 100dvw;
 	height: 100dvh;
 	background-color: paleturquoise;
+
+
+	.bubble {
+		width: 10dvw;
+		/* aspect-ratio: 1; */
+		height: 10dvw;
+		background-color: $bubble-background;
+		transition: background-color 1s, transform 1s;
+		border-radius: 50%;
+		animation: animationNameGoesHere 5s infinite linear;
+		position: absolute;
+	}
+
+
 }
 
-.bubble {
-	width: 10dvw;
-	/* aspect-ratio: 1; */
-	height: 10dvw;
-	background-color: blue;
-	transition: background-color 1s, transform 1s;
-	border-radius: 50%;
-	animation: animationNameGoesHere 5s infinite linear;
-	position: absolute;
-}
+
 
 .bubble:hover {
 	background-color: steelblue;
@@ -35,7 +40,7 @@ body {
 
 @keyframes animationNameGoesHere {
 	0% {
-		bottom: -1000px;
+		bottom: 1000px;
 		transform: translateY(0);
 	}
 	
@@ -45,9 +50,3 @@ body {
 	}
 
 }
-
-
-
-
-
-
